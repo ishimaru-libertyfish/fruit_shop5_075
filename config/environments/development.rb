@@ -78,4 +78,7 @@ Rails.application.configure do
 
   # MiniMagick
   Rails.application.config.active_storage.variant_processor = :mini_magick  # 追加
+
+  config.action_controller.forgery_protection_origin_check = false
+  
 end
