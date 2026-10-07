@@ -13,9 +13,9 @@ class CartsController < ApplicationController
       product_ids = session[:cart].map { |item| item["id"] }
       # 取り出したIDに該当する商品情報をまとめてデータベースから取得し、各IDをキーにしてハッシュ形式で取り出せるようにする（index_by）
       @products = Product.where(id: product_ids).index_by(&:id)
-      #p session[:cart].inspect
-      #p product_ids.inspect
-      #p @products.inspect
+      p session[:cart].inspect
+      p product_ids.inspect
+      p @products.inspect
     else
     end
   end
@@ -40,8 +40,8 @@ class CartsController < ApplicationController
       item["count"] += count if item
     end
     cart_calculation
-    p session[:cart].inspect
-    p session.inspect
+    #p session[:cart].inspect
+    #p session.inspect
     redirect_to carts_path, notice: '商品がセッションカートに追加されました。'
   end
   

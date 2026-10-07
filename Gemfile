@@ -67,3 +67,6 @@ end
 
 # Devise
 gem "devise"
+
+# Enum
+gem 'enum_help'
