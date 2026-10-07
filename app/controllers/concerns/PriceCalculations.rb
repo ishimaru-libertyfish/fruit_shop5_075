@@ -30,9 +30,9 @@ module PriceCalculations
     cart = Cart.find_by(user_id: current_user.id)
     @item_totals = cart.cart_items.map { |item| calculate_item_total(item.product.price, item.quantity) }
     @cart_total = calculate_total_sum(@item_totals)
-    #p cart.cart_items.inspect
-    #p @item_totals.inspect
-    #p @cart_total.inspect
+    p cart.cart_items.inspect
+    p @item_totals.inspect
+    p @cart_total.inspect
   end
   
 end
